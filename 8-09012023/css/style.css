@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(224, 244, 206);
+  }
+  h1 {
+    color: rgb(49, 49, 36);
+    text-align: center;
+  }
+  
+  .container {
+    color: rgb(241, 105, 105);
+    font-size: 1.2rem;
+  }
