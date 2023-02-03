@@ -19,7 +19,7 @@ btn.addEventListener('click', function () {
     svg.appendChild(circle);
     svg.setAttribute("width", valueInput);
     svg.setAttribute("height", valueInput);
-    circle.setAttribute("stroke", "blue");
+    circle.setAttribute("stroke", "green");
     circle.setAttribute("cx", valueInput / 2);
     circle.setAttribute("cy", valueInput / 2);
     circle.setAttribute("r", valueInput / 2);
