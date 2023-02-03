@@ -1,29 +1,19 @@
-let btn = document.querySelector('button');
-let input = document.querySelector('input');
-let svg = '';
-let circle = '';
-let valueInput = 0;
-console.log(input);
+let textInCircle = document.querySelector("#textInCircle");
+let btnTextCanvas = document.querySelector(".btnTextCanvas");
+let btnCanvas = document.querySelector(".btnCanvas");
+let clear = document.querySelector(".clear");
+let canvas = document.querySelector("canvas");
+let context = canvas.getContext("2d");
 
-input.addEventListener('change', function () {
-    valueInput = input.value;
-    if (valueInput > 0) {
-        btn.disabled = false;
-    }
+btnCanvas.addEventListener("click", function () {
+  canvas.style.opacity = "1";
 });
 
-btn.addEventListener('click', function () {
-    svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    document.body.appendChild(svg);
-    circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    svg.appendChild(circle);
-    svg.setAttribute("width", valueInput);
-    svg.setAttribute("height", valueInput);
-    circle.setAttribute("stroke", "green");
-    circle.setAttribute("cx", valueInput / 2);
-    circle.setAttribute("cy", valueInput / 2);
-    circle.setAttribute("r", valueInput / 2);
-    circle.addEventListener('click', function () {
-        circle.remove();
-    });
+btnTextCanvas.addEventListener("click", function () {
+  context.font = "40px calibri";
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.strokeText(textInCircle.value, 80, 140);
+});
+clear.addEventListener("click", function clear() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
 });
